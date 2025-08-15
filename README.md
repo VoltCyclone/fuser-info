@@ -79,7 +79,7 @@ The overlay input **must** be HDMI 2.1.
 
 ## 7. Firmware Upgrade — Dichen 4K Fuser (D60)
 
-> ⚠️ **Important:** Only upgrade with the **official package** from Dichen to avoid bricking your device.
+> ⚠️ **Important:** Only upgrade with the **official package** from Dichen to avoid bricking your device (check releases in this repo)
 
 ### Step 1 — Enter Upgrade Mode
 1. Connect D60 to **power** and the **USB-C port** on your PC.
@@ -95,6 +95,8 @@ The overlay input **must** be HDMI 2.1.
 2. Select the correct COM port (e.g., `COM3` in Windows Device Manager).
 3. Set file type to **BIN**.
 4. Click the `...` button, browse to the firmware file, and select **Open**.
+
+![UI](./assets/4k3.png)
 
 ### Step 4 — Send the Firmware
 1. Click **Send** in the firmware tool.
