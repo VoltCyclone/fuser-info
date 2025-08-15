@@ -1,6 +1,6 @@
 # D60 Upscaling Fuser — Dual-Input & Firmware Guide
 
-The **Dichen D60 4K Fuser** allows a **Main PC** (DisplayPort 1.4) and an **Overlay PC** (HDMI 2.1) to feed separate signals that are fused together. This guide covers supported resolutions, overlay scaling rules, GPU requirements, and the official firmware upgrade process.
+The **Dichen D60 4K Fuser** (aka Dichen p1) allows a **Main PC** (DisplayPort 1.4) and an **Overlay PC** (HDMI 2.1) to feed separate signals that are fused together. This guide covers supported resolutions, overlay scaling rules, GPU requirements, and the official firmware upgrade process.
 
 ---
 
