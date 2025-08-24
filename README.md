@@ -177,7 +177,6 @@ The overlay input **must** be HDMI 2.1.
 - **USB-C Port**
   - Function: Serial data interface via CH340C (not for power).
 
-- **SWD Header (Optional)**
-  - Pins: near the STM32F103
+  - Pins: 4-pin header, located adjacent to the STM32F103 microcontroller (between the MCU and the USB-C port)
   - Role: Debug and firmware flashing via ST-Link or CMSIS-DAP.
 
