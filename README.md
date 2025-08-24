@@ -117,4 +117,66 @@ The overlay input **must** be HDMI 2.1.
 - [ ] Overlay resolution = half of main
 - [ ] Use 6 bpc for high-refresh stability
 - [ ] Use certified cables
-- [ ] Follow official firmware upgrade steps exactly
+
+## Other info
+
+### Parts List
+
+#### Core Processing
+
+- **Xilinx Kintex-7 FPGA**
+  - Part: `XC7K325T-2FBG676C`
+  - Role: Primary logic for video fusion, EDID manipulation, and timing alignment.
+
+#### Memory
+
+- **DDR3 SDRAM**
+  - Quantity: 4x ICs
+  - Role: Framebuffer and temporary storage for FPGA operation.
+
+#### Display Control MCU
+
+- **STMicroelectronics STM32F103C8T6**
+  - Core: ARM Cortex-M3
+  - Flash: 64 KB
+  - RAM: 20 KB
+  - Role: OSD display rendering, serial communication with EDID.exe, firmware update interface.
+
+#### USB-to-Serial Bridge
+
+- **WCH CH340C**
+  - Role: USB-to-UART interface for .bin file injection via EDID.exe.
+
+#### Video Signal Integrity
+
+- **Texas Instruments DP141**
+  - Function: HDMI redriver / signal conditioner for TMDS integrity between HDMI ports and FPGA.
+
+#### Non-Volatile Storage
+
+- **SPI NOR Flash (i think Winbond W25Q64)**
+  - Capacity: 8 MB 
+  - Role: Bitstream storage for FPGA, configuration data, and possibly overlay font tables.
+
+#### Voltage Regulation
+
+| Voltage Rail | Purpose                             |
+|--------------|-------------------------------------|
+| 3.3V         | IO for MCU, SPI flash, HDMI PHY     |
+| 2.5V         | DDR3 I/O                             |
+| 1.8V         | Core voltage for logic level shifters |
+| 1.2V         | DDR3 core, FPGA auxiliary supply     |
+| 0.95V        | FPGA VCCINT core voltage             |
+
+#### Connectors
+
+- **HDMI Inputs and Outputs**
+  - Ports: 1 dp input, 1 hdmi input, 1 dp output
+  - Routed directly into FPGA through DP141 redrivers.
+
+- **USB-C Port**
+  - Function: Serial data interface via CH340C (not for power).
+
+  - Pins: 4-pin header, located adjacent to the STM32F103 microcontroller (between the MCU and the USB-C port)
+  - Role: Debug and firmware flashing via ST-Link or CMSIS-DAP.
+
